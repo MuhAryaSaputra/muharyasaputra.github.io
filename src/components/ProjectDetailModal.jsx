@@ -67,17 +67,6 @@ export default function ProjectDetailModal({ project, projects, onClose, onSelec
           {/* ================= STICKY TOPBAR ================= */}
           <header className="case-study-sticky-bar">
             <div className="case-study-bar-content">
-              <button
-                type="button"
-                className="case-study-back-btn"
-                onClick={onClose}
-                aria-label="Back to projects"
-              >
-                <span className="back-arrow">←</span>
-                <span className="back-text">Back to Selected Works</span>
-                <span className="back-esc-hint">[ESC]</span>
-              </button>
-
               <div className="case-study-topbar-center">
                 <span className="topbar-project-num">{project.number || `0${currentIndex + 1} -`}</span>
                 <span className={`tag-category ${project.tagClass || 'tag-ml'}`}>

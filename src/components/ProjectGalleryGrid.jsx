@@ -55,19 +55,12 @@ export default function ProjectGalleryGrid({ gallery, projectTitle }) {
       <div className={`gallery-grid ${isPhotoGallery ? 'photo-strip-grid' : 'diagram-grid'}`}>
         {gallery.map((item, index) => {
           const isPhoto = item.type === 'image' && item.imageSrc;
-          const tiltDeg = isPhoto ? (index % 2 === 0 ? (index === 0 ? -1.8 : -1.2) : 1.5) : 0;
 
           return (
-            <motion.div
+            <div
               key={item.id}
               className={`gallery-card ${isPhoto ? 'polaroid-card' : 'vector-diagram-card'}`}
-              style={{ transform: `rotate(${tiltDeg}deg)` }}
-              whileHover={{
-                scale: 1.02,
-                y: -6,
-                rotate: 0,
-                transition: { duration: 0.22, ease: [0.16, 1, 0.3, 1] }
-              }}
+              style={isPhoto ? { cursor: 'pointer' } : undefined}
               onClick={() => isPhoto && setActiveLightboxIndex(index)}
             >
               <div className="gallery-card-topbar">
@@ -103,7 +96,7 @@ export default function ProjectGalleryGrid({ gallery, projectTitle }) {
                 <h4 className="gallery-item-title">{item.title}</h4>
                 <p className="gallery-item-caption">{item.caption}</p>
               </div>
-            </motion.div>
+            </div>
           );
         })}
       </div>
