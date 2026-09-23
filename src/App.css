@@ -876,24 +876,30 @@
 
   /* Hero Mobile */
   .hero-section {
-    min-height: 739px;
-    padding: 50px 0 40px;
+    min-height: auto;
+    padding: 48px 0 40px;
   }
 
   .hero-wrapper {
-    gap: 36px;
+    gap: 32px;
+  }
+
+  .hero-title-wrapper {
+    gap: 14px;
   }
 
   .hero-main-title {
-    font-size: 22px;
-    letter-spacing: -0.44px;
-    max-width: 320px;
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 1.16;
+    letter-spacing: -0.8px;
+    max-width: 380px;
   }
 
   .hero-subtitle {
-    font-size: 14px;
-    letter-spacing: -0.28px;
-    max-width: 320px;
+    font-size: clamp(16px, 4.2vw, 19px);
+    line-height: 1.35;
+    letter-spacing: -0.3px;
+    max-width: 340px;
   }
 
   .photo-card {
