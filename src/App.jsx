@@ -256,6 +256,9 @@ function Navbar({ scrollToSection }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Resume URL (Google Drive link to be updated)
+  const RESUME_URL = '#'
+
   const navItems = [
     { id: 'about', label: 'ABOUT ME' },
     { id: 'expertise', label: 'CORE EXPERTISE' },
@@ -266,6 +269,13 @@ function Navbar({ scrollToSection }) {
   const handleNavClick = (id) => {
     scrollToSection(id)
     setIsMenuOpen(false)
+  }
+
+  const handleResumeClick = (e) => {
+    if (RESUME_URL === '#') {
+      e.preventDefault()
+      alert('Link resume Google Drive akan segera diupdate!')
+    }
   }
 
   return (
@@ -293,7 +303,7 @@ function Navbar({ scrollToSection }) {
           </button>
         </div>
 
-        {/* Desktop Links (Centered) */}
+        {/* Desktop Links */}
         <div className="minimal-navbar-links">
           {navItems.map((item) => {
             const isActive = activeSection === item.id
@@ -305,11 +315,31 @@ function Navbar({ scrollToSection }) {
                 className={`minimal-nav-link ${isActive ? 'is-active' : ''}`}
                 onClick={() => handleNavClick(item.id)}
               >
-                {item.label}
+                <span>{item.label}</span>
+                {isActive && (
+                  <motion.span
+                    className="nav-active-dot"
+                    layoutId="navbar-active-dot"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
               </button>
             )
           })}
         </div>
+
+        {/* Resume Button on the rightmost */}
+        <a
+          href={RESUME_URL}
+          target={RESUME_URL !== '#' ? '_blank' : undefined}
+          rel={RESUME_URL !== '#' ? 'noopener noreferrer' : undefined}
+          className="navbar-resume-btn"
+          aria-label="View Resume"
+          onClick={handleResumeClick}
+        >
+          <span>Resume</span>
+          <span className="resume-icon">↗</span>
+        </a>
       </div>
 
       {/* Mobile Drawer */}
@@ -334,9 +364,24 @@ function Navbar({ scrollToSection }) {
                     onClick={() => handleNavClick(item.id)}
                   >
                     <span>{item.label}</span>
+                    {isActive && <span className="nav-mobile-active-dot" />}
                   </button>
                 )
               })}
+
+              <a
+                href={RESUME_URL}
+                target={RESUME_URL !== '#' ? '_blank' : undefined}
+                rel={RESUME_URL !== '#' ? 'noopener noreferrer' : undefined}
+                className="navbar-resume-btn mobile-drawer-resume-btn"
+                onClick={(e) => {
+                  handleResumeClick(e)
+                  setIsMenuOpen(false)
+                }}
+              >
+                <span>Resume</span>
+                <span className="resume-icon">↗</span>
+              </a>
             </div>
           </motion.div>
         )}
