@@ -352,6 +352,14 @@ export default function App() {
   const [hoveredPill, setHoveredPill] = useState(null)
   const [selectedProject, setSelectedProject] = useState(null)
   const [toastMessage, setToastMessage] = useState('')
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   // Close modal on Escape key
   useEffect(() => {
@@ -524,9 +532,9 @@ export default function App() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  onMouseEnter={() => setHoveredWorkId(work.id)}
-                  onMouseLeave={() => setHoveredWorkId(null)}
-                  onClick={() => setSelectedProject(work)}
+                  onMouseEnter={() => !isMobile && setHoveredWorkId(work.id)}
+                  onMouseLeave={() => !isMobile && setHoveredWorkId(null)}
+                  onClick={() => !isMobile && setSelectedProject(work)}
                 >
                   <h3 className="work-item-title">{work.title}</h3>
                   <div className={`tag-category ${work.tagClass}`}>
