@@ -1,0 +1,77 @@
+:root {
+  --font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --color-black: #080808;
+  --color-white: #ffffff;
+  --color-grid-line: #e5e5e5;
+  --color-figma-blue: #009adc;
+  --color-figma-blue-light: rgba(0, 154, 220, 0.09);
+  
+  /* Core expertise category colors */
+  --bg-expertise-pm: #fff0f0;
+  --bg-expertise-sys: #f3ffd1;
+  --bg-expertise-ai: #d1ffdf;
+
+  /* Tag colors */
+  --tag-ml-bg: #c6f5d5;
+  --tag-ml-text: #29432c;
+  --tag-iot-bg: #f5c6c6;
+  --tag-iot-text: #582a2a;
+  --tag-web-bg: #b0d5ff;
+  --tag-web-text: #1e2d3d;
+  --tag-research-bg: #ffd796;
+  --tag-research-text: #362e18;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  background-color: #ffffff;
+  color: var(--color-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: clip;
+  background-color: #ffffff;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Technical Blueprint Grid Background */
+.blueprint-grid {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
+  background-size: 77px 77px;
+  background-position: center top;
+}
