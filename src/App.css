@@ -947,7 +947,7 @@
   /* Core Expertise Mobile */
   .core-expertise-section {
     display: block;
-    min-height: 170vh;
+    min-height: 175vh;
   }
 
   .expertise-sticky-wrapper {
@@ -957,12 +957,13 @@
   }
 
   .expertise-cards-stage {
-    height: 380px;
+    height: 420px;
   }
 
   .expertise-card {
-    padding: 24px 16px;
+    padding: 18px 16px;
     border-radius: 16px;
+    gap: 8px;
     text-align: center;
     align-items: center;
   }
@@ -972,7 +973,8 @@
   }
 
   .expertise-card-desc {
-    font-size: 13px;
+    font-size: 13.5px;
+    line-height: 1.4;
   }
 
   /* Selected Works Mobile */

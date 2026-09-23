@@ -144,8 +144,8 @@ function CoreExpertiseSection() {
   // Pause   (0.42 -> 0.48): Brief rest
   // Phase 2 (0.48 -> 0.82): Card 3 emerges from behind Card 2 to 310px
   // Settled (0.82 -> 1.00): Fully opened & readable
-  const card2TargetY = isMobile ? 120 : 155
-  const card3TargetY = isMobile ? 240 : 310
+  const card2TargetY = isMobile ? 134 : 155
+  const card3TargetY = isMobile ? 286 : 310
 
   const card2InitialY = isMobile ? 6 : 8
   const card3InitialY = isMobile ? 12 : 16
