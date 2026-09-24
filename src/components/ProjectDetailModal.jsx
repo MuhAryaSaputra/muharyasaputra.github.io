@@ -64,26 +64,15 @@ export default function ProjectDetailModal({ project, projects, onClose, onSelec
         data-lenis-prevent="true"
       >
         <div className="case-study-blueprint-bg blueprint-grid">
-          {/* ================= STICKY TOPBAR ================= */}
-          <header className="case-study-sticky-bar">
-            <div className="case-study-bar-content">
-              <div className="case-study-topbar-center">
-                <span className="topbar-project-num">{project.number || `0${currentIndex + 1} -`}</span>
-                <span className={`tag-category ${project.tagClass || 'tag-ml'}`}>
-                  {project.category || project.tag}
-                </span>
-              </div>
-
-              <button
-                type="button"
-                className="case-study-close-btn"
-                onClick={onClose}
-                aria-label="Close Case Study"
-              >
-                ✕
-              </button>
-            </div>
-          </header>
+          {/* Floating Close Button at top-right of viewport */}
+          <button
+            type="button"
+            className="case-study-close-btn"
+            onClick={onClose}
+            aria-label="Close Case Study"
+          >
+            ✕
+          </button>
 
           {/* ================= MAIN CASE STUDY CONTENT CONTAINER ================= */}
           <main className="case-study-main-container">
