@@ -963,8 +963,38 @@
     margin-top: 4px;
   }
 
-  .navbar-resume-btn {
+  .desktop-resume-btn,
+  .minimal-navbar-inner > .navbar-resume-btn {
     display: none !important;
+  }
+
+  .mobile-drawer-resume-btn {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #080808;
+    border: 1px solid #080808;
+    border-radius: 999px;
+    padding: 10px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-top: 8px;
+    width: 100%;
+    max-width: 220px;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-drawer-resume-btn:hover {
+    background-color: #262626;
+    border-color: #262626;
   }
 
   .section-content {

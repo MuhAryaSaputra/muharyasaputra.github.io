@@ -328,12 +328,12 @@ function Navbar({ scrollToSection }) {
           })}
         </div>
 
-        {/* Resume Button on the rightmost */}
+        {/* Resume Button on the rightmost (Desktop only) */}
         <a
           href={RESUME_URL}
           target={RESUME_URL !== '#' ? '_blank' : undefined}
           rel={RESUME_URL !== '#' ? 'noopener noreferrer' : undefined}
-          className="navbar-resume-btn"
+          className="navbar-resume-btn desktop-resume-btn"
           aria-label="View Resume"
           onClick={handleResumeClick}
         >
@@ -368,6 +368,22 @@ function Navbar({ scrollToSection }) {
                   </button>
                 )
               })}
+
+              {/* Resume Button inside Mobile Drawer */}
+              <a
+                href={RESUME_URL}
+                target={RESUME_URL !== '#' ? '_blank' : undefined}
+                rel={RESUME_URL !== '#' ? 'noopener noreferrer' : undefined}
+                className="mobile-drawer-resume-btn"
+                aria-label="View Resume"
+                onClick={(e) => {
+                  handleResumeClick(e)
+                  setIsMenuOpen(false)
+                }}
+              >
+                <span>Resume</span>
+                <span className="resume-icon">↗</span>
+              </a>
             </div>
           </motion.div>
         )}
