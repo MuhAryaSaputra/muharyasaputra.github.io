@@ -368,20 +368,6 @@ function Navbar({ scrollToSection }) {
                   </button>
                 )
               })}
-
-              <a
-                href={RESUME_URL}
-                target={RESUME_URL !== '#' ? '_blank' : undefined}
-                rel={RESUME_URL !== '#' ? 'noopener noreferrer' : undefined}
-                className="navbar-resume-btn mobile-drawer-resume-btn"
-                onClick={(e) => {
-                  handleResumeClick(e)
-                  setIsMenuOpen(false)
-                }}
-              >
-                <span>Resume</span>
-                <span className="resume-icon">↗</span>
-              </a>
             </div>
           </motion.div>
         )}
