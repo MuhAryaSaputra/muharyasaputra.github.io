@@ -256,8 +256,8 @@ function Navbar({ scrollToSection }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Resume URL (Google Drive link to be updated)
-  const RESUME_URL = '#'
+  // Resume URL (Google Drive)
+  const RESUME_URL = 'https://drive.google.com/file/d/1sxekSjO7Lwm0UCDWw_lYuwg_1DLbd7Hv/view?usp=drivesdk'
 
   const navItems = [
     { id: 'about', label: 'ABOUT ME' },
@@ -272,7 +272,7 @@ function Navbar({ scrollToSection }) {
   }
 
   const handleResumeClick = (e) => {
-    if (RESUME_URL === '#') {
+    if (!RESUME_URL || RESUME_URL === '#') {
       e.preventDefault()
       alert('Link resume Google Drive akan segera diupdate!')
     }
